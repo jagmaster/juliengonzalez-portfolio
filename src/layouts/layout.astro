@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import "aos/dist/aos.css";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+
+const {
+    title = "Julien Gonzalez — Web Designer",
+    description = "Portfolio de Julien Gonzalez",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth" id="topPage">
+    <head>
+        <!-- Global Metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/ico" href="/favicon.ico" />
+        
+        <!-- Primary Meta Tags -->
+        <title>{title}</title>
+        <meta name="title" content={title}>
+        <meta name="description" content={description} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:locale" content="fr_FR" />
+        <!-- <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" /> -->
+        <meta property="og:image:alt" content="Cover de la card" />
+
+        <!-- Twitter / X Card -->
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        
+        
+    </head>
+    <body class="bg-stone-50 relative mt-32 md:mt-7">
+        <!-- Header-->
+        <Header />
+        <!-- /Header-->
+
+        <!-- Main -->
+        <main>
+            <slot />
+
+            <!-- Contact -->
+            <Contact />
+            <!-- /Contact -->
+        </main>
+        <!-- /Main -->
+
+        <!-- Footer -->
+        <Footer />
+        <!-- /Footer -->
+
+        <ScrollToTop />
+        <script src="../scripts/main.js"></script>
+    </body>
+</html>

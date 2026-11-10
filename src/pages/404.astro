@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout
+title="404 | Julien Gonzalez"
+description="Découvrez le portfolio de Julien Gonzalez, Web Designer et développeur web. Découvrez qui je suis et ce que je peux faire pour vous."
+>
+
+<section class="404_content mt-40">
+    <div class="container mx-auto mb-20 px-6 xl:px-28">
+        <div class="box404 bg-stone-200 dark:bg-stone-300 px-4 py-8 md:p-24 rounded-4xl flex flex-col-reverse md:flex-row md:justify-center md:items-center gap-6 md:gap-16">
+          <div class="content flex flex-2 flex-col justify-start items-start gap-16">
+            <div class="title flex flex-col justify-start items-start gap-4">
+              <div class="title__header">
+                <p class="tagline text-stone-950 tracking-wider font-bold uppercase text-sm mb-1">
+                  404 Not Found
+                </p>
+                <h2 class="section-title max-w-xl text-2xl md:text-3xl lg:text-[40px] leading-6 md:max-w-full  md:leading-8 lg:leading-11 font-bold uppercase -ml-1">
+                Oups ! Nous ne trouvons pas la page.
+                </h2>
+              </div>
+              <p  class="title__description max-w-md">
+                Nous ne trouvons pas la page que vous cherche. Le liens n’est probablement pas bon.
+              </p>
+            </div>
+            <div class="cta">
+              <a
+                href="/"
+                class="btn--large px-4"
+              >Retour à la page d'accueil</a>
+            </div>
+          </div>
+          
+
+          <div class="error-code flex justify-start items-start flex-1">
+            <p class="text-9xl font-bold">
+              404
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+    
+</Layout>

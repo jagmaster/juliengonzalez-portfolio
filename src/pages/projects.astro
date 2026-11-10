@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/layout.astro";
+import ProjectCard from "../components/projects/ProjectCard.astro";
+
+const projects = (await getCollection("projects"))
+    .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+title="Projets | Julien Gonzalez"
+description="Découvrez le portfolio de Julien Gonzalez, Web Designer et développeur web. Découvrez ce que j'ai réalisé et donc ce que je peux aussi faire pour vous."
+>
+<!-- Page Header -->
+<section class="page-header mt-48">
+    <div class="container mx-auto px-4 md:px-20">
+        <div class="page-header__content flex flex-col lg:flex-row justify-between items-start gap-4 lg:gap-20">
+            <div 
+                data-aos="fade-right" 
+                data-aos-easing="ease-in-out"
+                class="title  flex flex-col justify-start items-start gap-2">
+                <h3 class="tagline">
+                    Portfolio
+                </h3>
+                <h2 class="section-title max-w-172.25">
+                    Voici tous mes derniers projets
+                </h2>
+            </div>
+            <div 
+                data-aos="fade-right" 
+                data-aos-delay="200"
+                data-aos-easing="ease-in-out"
+                class="description-container">
+                <p class="description max-w-96">
+                    Voici une sélection de projets réalisés ou explorés autour du design web, de l’identité visuelle et du développement web.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Gallery -->
+<section class="works pt-20 pb-32">
+    <div class="container mx-auto px-4 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+        <!-- {projects.map((project) => (
+            <ProjectCard
+              {...project.data}
+              href={`/projects/${project.id}/`}
+            />
+          ))} -->
+
+          {projects.map((project) => ( 
+            <ProjectCard
+                {...project.data}
+                href={`/projects/${project.id}`}
+            />
+          ))}
+
+        
+
+
+    </div>
+</section>
+    
+</Layout>

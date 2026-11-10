@@ -1,0 +1,120 @@
+---
+import "../styles/global.css";
+import "aos/dist/aos.css";
+
+const currentPath = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  const current = currentPath.replace(/\/$/, "") || "/";
+  const target = href.replace(/\/$/, "") || "/";
+
+  if (target === "/") {
+    return current === "/";
+  }
+
+  return current === target || current.startsWith(`${target}/`);
+};
+---
+
+		<header class="md:w-full py-3 mt-3 fixed top-0 right-0 left-0 z-10">
+			<div class="container mx-auto px-4 md:px-20 flex flex-row justify-between items-center">
+				<div class="logo-main bg-stone-50 px-2 py-2 rounded-lg">
+					<a href="/">
+						<img src="/img/main_logo.svg" alt="Logo de Julien Gonzalez" width="46" height="40">
+					</a>
+				</div>
+				<nav class="hidden md:block z-50">
+					<ul class="p-1 w-full flex flex-row justify-center items-center gap-3 bg-stone-200 border-stone-300 rounded-4xl">
+						<li 
+                        class={isActive("/") ? "nav-item current-menu-item" : "nav-item"}
+                        aria-current={isActive("/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/" 
+                                class="py-3.5 px-6"
+                            >
+                                Acceuil
+                            </a>
+						</li>
+						<li 
+                        class={isActive("/projects/") ? "nav-item current-menu-item" : "nav-item"}
+                        aria-current={isActive("/projects/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/projects" 
+                                class="py-3.5 px-6"
+                            >
+                                Projets
+                            </a>
+						</li>
+						<li 
+                        class={isActive("/about/") ? "nav-item current-menu-item" : "nav-item"}
+                        aria-current={isActive("/about/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/about" 
+                                class= "py-3.5 px-6"
+                            >
+                                À propos
+                            </a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__cta cursor-pointer hidden md:block">
+					<a href="#contact" class="btn--header">Contact</a>
+				</div>
+				<nav id="responsiveNav" class="responsive-nav bg-stone-200 pt-24 lg:hidden fixed -top-full left-0 right-0 -z-10 transition-all duration-300">
+					<ul class=" w-full pt-4 pb-6 px-4 flex flex-col justify-center items-center gap-2">
+						<li 
+                            class={isActive("/") ? "responsive-current-menu-item" : "responsive-nav-item"}
+                            aria-current={isActive("/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/" 
+                                class="w-full text-center h-full py-2 px-2"
+                            >
+                                Acceuil
+                            </a>
+                        </li>
+						<li 
+                            class={isActive("/projects") ? "responsive-current-menu-item" : "responsive-nav-item"}
+                            aria-current={isActive("/projects/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/projects" 
+                                class="w-full text-center h-full py-2 px-2"
+                            >
+                                Projets
+                            </a>
+                        </li>
+						<li 
+                            class={isActive("/about") ? "responsive-current-menu-item" : "responsive-nav-item"}
+                            aria-current={isActive("/about/") ? "page" : undefined}
+                        >
+							<a 
+                                href="/about" 
+                                class="w-full text-center h-full py-2 px-2"
+                            >
+                                À propos
+                            </a>
+                        </li>
+						<li class="responsive-nav-contact-item">
+							<a 
+                                href="#contact" 
+                                class="w-full text-center h-full py-2 px-2"
+                            >
+                                Contact
+                            </a>
+                        </li>
+					</ul>
+				</nav>
+				<div class="responsive-nav-buttons w-10 h-10 relative md:hidden">
+					<div id="openMenuButton" class="burger-nav-button bg-stone-50 px-2 py-2 rounded-lg flex justify-center items-center">
+						<img src="/img/icons/burger.svg" alt="">
+					</div>
+					<div id="closeMenuButton" class="close-nav-button bg-stone-50 px-2 py-2 rounded-lg  hidden justify-center items-center">
+						<img src="/img/icons/x.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</header>

@@ -1,0 +1,71 @@
+---
+const today = new Date();
+---
+
+<footer class="py-8 bg-stone-950 text-stone-50">
+    <div class="footer__top py-4 border-b border-b-stone-50">
+        <div class="container mx-auto px-4 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-4 ">
+            <div class="footer__logo">
+                <a href="/">
+                    <img src="/img/main_logo--dark.svg" alt="" width="32" height="28">
+                </a>
+            </div>
+            <nav class="footer__nav">
+                <a href="/" class="box-border py-1 px-2 md:px-4 hover:underline">Home</a>
+                <a href="/projects" class="box-border py-1 px-2 md:px-4 hover:underline">Projets</a>
+                <a href="/about" class="box-border py-1 px-2 md:px-4 hover:underline">À propos</a>
+                <a href="/#contact" class="box-border py-1 px-2 md:px-4 hover:underline">Contact</a>
+            </nav>
+            <div class="footer__social-links">
+                <ul class="px-4 py-2 flex flex-row justify-center items-center gap-5 transition-all duration-300">
+                    <li class="transition-all duration-300">
+                        <a href="https://www.linkedin.com/in/julien-gonzalez-25929b36" target="_blank">
+                            <img src="/img/icons/socials/linkedin.svg" alt="">
+                        </a>
+                    </li>
+                    <li class="transition-all duration-300 pt-1">
+                        <a href="https://www.behance.net/julien-gonzalez" target="_blank">
+                            <img src="/img/icons/socials/behance.svg" alt="">
+                        </a>
+                    </li>
+                    <!-- <li class="transition-all duration-300 pt-1">
+                        <a href="/" target="_blank">
+                            <img src="/public/img/icons/socials/instagram.svg" alt="">
+                        </a>
+                    </li> -->
+                    <!-- <li class="transition-all duration-300">
+                        <a href="/" target="_blank">
+                            <img src="/public/img/icons/socials/dribbble.svg" alt="">
+                        </a>
+                    </li> -->
+                    <li class="transition-all duration-300">
+                        <a href="https://www.malt.fr/profile/juliengonzalez" target="_blank">
+                            <img src="/img/icons/socials/malt.svg" alt="" width="22" height="22">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom py-4 text-sm text-stone-400">
+        <div class="container mx-auto px-4 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-center">
+            <p class="text-xs lg:text-sm">
+                ©{today.getFullYear()} <a href="/about" class="transition-all duration-300 hover:text-stone-200">Julien Gonzalez</a> - UI/UX Web Designer & Développeur Front-End - Paris
+            </p>
+            <ul class="flex flex-row justify-center items-center gap-1 text-xs lg:text-sm">
+                <!-- <li class="transition-all duration-300 hover:text-stone-200">
+                    <a href="/">Site map</a>
+                </li>- -->
+                <li class="transition-all duration-300 hover:text-stone-200">
+                    <a href="/mentions-legales">Mentions Légales</a>
+                </li>-
+                <li class="transition-all duration-300 hover:text-stone-200">
+                    <a href="/politique-de-confidentialite">Politiques de confidentialité</a>
+                </li>
+                <!-- <li class="transition-all duration-300 hover:text-stone-200">
+                    <a href="/">C.G.V.</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</footer>

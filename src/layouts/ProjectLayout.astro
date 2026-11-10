@@ -1,0 +1,97 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    categories: string[];
+    detailCover: string;
+    detailCoverAlt?: string;
+    gallery: {
+        src: string;
+        alt: string;
+    }[];
+}
+
+const {
+  title,
+  description,
+  categories,
+  detailCover,
+  detailCoverAlt = "",
+  gallery,
+} = Astro.props;
+---
+
+<section class="work-hero my-40">
+    <div class="container mx-auto px-4 lg:px-20">
+        <div class="work-hero__header flex flex-col justify-center items-center gap-6 mb-10">
+            <div class="projetc-name -translate-x-6 flex flex-row justify-center items-center gap-4">
+                <a data-aos="fade-left" data-aos-delay="200" href="/projects" class="backlink p-3 rounded-full hover:bg-stone-200 transition-all duration-300">
+                    <img src="/img/icons/arrow-left.svg" alt="">
+                </a>
+                <!-- <h2 data-aos="flip-down" class="text-5xl text-stone-950 font-extrabold">Grain&Co.</h2> -->
+                <h2 data-aos="flip-down" class="text-5xl text-stone-950 font-extrabold">{title}</h2>
+            </div>
+            <ul class="flex flex-row justify-start items-start gap-2 text-sm uppercase">
+                {categories.map((category, index) => ( 
+                    <li 
+                        data-aos="flip-down" 
+                        data-aos-delay={400 + index * 200} 
+                        class="category-tag"
+                    >
+                        <span class="px-4 py-2 cursor-default">{category}</span>
+                    </li>
+                ))}
+
+        
+
+                <!-- <li data-aos="flip-down" data-aos-delay="400" class="category-tag">
+                    <a href="/" class="px-4 py-2">Branding</a>
+                </li>
+                <li data-aos="flip-down" data-aos-delay="600" class="category-tag">
+                    <a href="/" class="px-4 py-2">UI/UX</a>
+                </li>
+                <li data-aos="flip-down" data-aos-delay="800" class="category-tag">
+                    <a href="/" class="px-4 py-2">Web Design</a>
+                </li> -->
+            </ul>
+        </div>
+
+        <div data-aos="fade-down" data-aos-duration="1000" class="project__cover--larg rounded-3xl overflow-hidden mb-32">
+            <!-- <img src="/src/assets/img/cover_grain--large.jpg" alt="la cover large du projet Grain&Co." width="1200" height="504"> -->
+            <img src={detailCover} alt={detailCoverAlt} width="1200" height="504">
+        </div>
+
+        <div class="project-infos flex flex-col lg:flex-row justifify-start md:justify-between gap-4">
+            <h3 data-aos="fade-right" class="project-infos__name text-4xl md:text-5xl text-stone-950 font-extrabold">
+                <!-- Grain&Co. -->{title}
+            </h3>
+            <p data-aos="fade-left" class="project-infos__description max-w-md md:text-lg">
+                <!-- Ergonomie et cohérence visuelle. Conception graphique des interfaces utilisateurs de sites vitrines, E-commerce et application mobile. -->
+                {description}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="work__content mb-40">
+    <div class="container mx-auto px-4 md:px-20">
+        <div class="work max-w-248.75 flex flex-col justify-center items-center gap-10 mx-auto">
+            {gallery.map((image) => (
+                <img
+                    data-aos="fade-up"
+                    data-aos-offset="500"
+                    src={image.src}
+                    alt={image.alt}
+                    width="995"
+                    height="auto"
+                    class="rounded-3xl"
+                    loading="lazy"
+                />
+            ))}
+            <!-- <img data-aos="fade-up" data-aos-offset="500" src="/src/assets/img/works/02_Part Title - About.jpg" alt="" width="995" height="auto" class="rounded-3xl">
+            <img data-aos="fade-up" data-aos-offset="500" src="/src/assets/img/works/03_Projet Introduction.jpg" alt="" width="995" height="auto" class="rounded-3xl">
+            <img data-aos="fade-up" data-aos-offset="500" src="/src/assets/img/works/04_Part Title - Process.jpg" alt="" width="995" height="auto" class="rounded-3xl">
+            <img data-aos="fade-up" data-aos-offset="500" src="/src/assets/img/works/05_Process.jpg" alt="" width="995" height="auto" class="rounded-3xl"> -->
+        </div>
+    </div>
+</section>

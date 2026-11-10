@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/layout.astro";
+import Services from "../components/Sevices.astro";
+---
+
+<Layout
+title="À propos | Julien Gonzalez"
+description="Découvrez le portfolio de Julien Gonzalez, Web Designer et développeur web. Découvrez qui je suis et ce que je peux faire pour vous."
+>
+<section class="py-20 hero text-neutral-50 md:h-dvh flex flex-col justify-center items-center">
+    <div class="container mx-auto px-4 md:px-20 h-full flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-20">
+        <div class="about_hero__content--left text-stone-950">
+            <h2 data-aos="fade-up" data-aos-easing="ease-in-out" class="section-title mb-6">
+                À propos de moi ...
+            </h2>
+            <div class="about__hero__body text-lg max-w-xl flex flex-col gap-7">
+                <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="300">
+                    Directeur Artistique – Web Designer & Développeur Web front-end indépendant,
+                </p>
+                <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="500">
+                    J’accompagne les entrepreneurs et jeunes marques qui ont besoin d’un site web aligné avec leur identité, lisible pour leurs clients et facile à faire évoluer.
+                </p>
+                <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="700">
+                    J’interviens de la direction artistique à la conception et au développement WordPress sur mesure, avec une approche à la fois créative et technique.
+                </p>
+                <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="900">
+                    Mon rôle : clarifier, structurer et mettre en forme des projets web qui manquent souvent de cohérence ou de direction.
+                </p>
+            </div>
+        </div>
+        <div data-aos="fade-right" data-aos-easing="ease-out" data-aos-duration="1300" class="about_hero__content--right">
+            <div class="about__hero__img rounded-3xl overflow-hidden">
+                <img src="/img/pp--large.jpg" alt="Large Photo de profile de Julien Gonzalez" width="360" height="689">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service -->
+<Services />
+
+<!-- F.A.Q. -->
+<section class="faq py-32 bg-stone-200">
+    <div class="container mx-auto px-4 md:px-20 flex justify-center items-center">
+        <div class="faq__content max-w-4xl flex flex-col justify-center items-start gap-6">
+            <h2 data-aos="flip-down" class="faq__title section-title">
+                Questions fréquentes
+            </h2>
+            <div class="faq__questions flex flex-col justify-start items-start gap-6">
+                <div class="faq__item max-w-2xl">
+                    <h5 data-aos="flip-down" data-aos-delay="200" class="text-xl md:text-2xl text-shadow-olive-950 font-semibold">
+                        Comment s’effectue le paiement ?
+                    </h5>
+                    <p data-aos="flip-down" data-aos-delay="400" class="text-stone-700">
+                        Le paiement de mes services peut se faire par virement bancaire. Un acompte de 50% du montant total est demandé après signature du devis.
+                    </p>
+                </div>
+                <div class="faq__item max-w-2xl">
+                    <h5 data-aos="flip-down" data-aos-delay="600" class="text-xl md:text-2xl text-shadow-olive-950 font-semibold">
+                        Comment avoir un nom de domaine ?
+                    </h5>
+                    <p data-aos="flip-down" data-aos-delay="800" class="text-stone-700">
+                        Le nom de domaine et l’hébergement sont à vos frais. Je reste à votre disposition pour vous aider à obtenir le votre et le configurer sur votre hébergement.
+                    </p>
+                </div>
+                <div class="faq__item max-w-2xl">
+                    <h5 data-aos="flip-down" data-aos-delay="1000" class="text-xl md:text-2xl text-shadow-olive-950 font-semibold">
+                        Comment héberger mon site ?
+                    </h5>
+                    <p data-aos="flip-down" data-aos-delay="1200" class="text-stone-700">
+                        Si vous ne savez pas quel hébergement choisir, je vous aide à choisir parmi les différents choix qui se proposent à vous en fonction de votre projet.
+                    </p>
+                </div>
+                <div class="faq__item max-w-2xl">
+                    <h5 data-aos="flip-down" data-aos-delay="1400" class="text-xl md:text-2xl text-shadow-olive-950 font-semibold">
+                        Acceptez-vous les stagiaires ?
+                    </h5>
+                    <p data-aos="flip-down" data-aos-delay="1600" class="text-stone-700">
+                        Malheureusement non. Travaillant le plus souvent de chez moi, il m’est impossible d’y accueillir une autre personne.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+</Layout>

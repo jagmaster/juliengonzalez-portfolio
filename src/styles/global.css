@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* @import "tailwindcss"; */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
+
+/* :root {
+    --background: #ffffff;
+    --foreground: #171717;
+} */
+
+@theme{
+    
+    /* --font-inter: 'Inter', Helvetica, Arial, sans-serif;
+    --font-hanken: "Hanken Grotesk", sans-serif; */
+    /* --font-isometra: "Isometra", sans-serif; */
+}
+@layer components{
+    .nav-item{
+        @apply py-2 bg-transparent hover:bg-stone-200 border border-transparent hover:border-stone-500 text-stone-950 font-semibold rounded-4xl transition-all duration-300 cursor-pointer 
+    }
+    .current-menu-item{
+        @apply bg-white py-2 border border-stone-500 text-black font-semibold rounded-4xl transition-all duration-300 cursor-pointer hover:bg-stone-200 hover:border-stone-500
+    }
+    .responsive-nav-item{
+        @apply w-full flex justify-center items-center py-2 bg-stone-50 hover:bg-stone-200 border border-transparent hover:border-stone-500 text-stone-950 font-semibold transition-all duration-300 rounded-lg
+    }
+    .responsive-nav-contact-item{
+        @apply w-full flex justify-center items-center py-2 bg-stone-50 hover:bg-stone-950 text-stone-950 hover:text-stone-50 border border-stone-950 font-semibold transition-all duration-300 rounded-lg
+    }
+    .responsive-current-menu-item{
+        @apply w-full flex justify-center items-center py-2 bg-stone-950 hover:bg-stone-700 border border-transparent hover:border-stone-500 text-stone-50 font-semibold transition-all duration-300 rounded-lg
+    }
+
+    .tagline{
+        @apply uppercase tracking-wide font-extrabold text-lg leading-5
+    }
+    .section-title{
+        @apply text-4xl md:text-5xl font-bold uppercase
+    }
+
+    .btn--header{
+        @apply py-3 px-6 bg-stone-950 text-stone-50 rounded-4xl uppercase leading-none hover:bg-stone-800 transition-all duration-300 border-stone-50 border cursor-pointer
+    }
+
+    .btn--large{
+        @apply py-2 px-10 border border-stone-950 bg-stone-50 transition-all duration-300  hover:bg-stone-950 text-stone-950 hover:text-stone-50 rounded-4xl uppercase cursor-pointer
+    }
+
+    .category-tag{
+        @apply  py-2 bg-stone-200 rounded-4xl transition-all duration-300 hover:bg-stone-300 text-sm lg:text-xs xl:text-sm
+    }
+} 
+
+/*////////////////////
+//// Font Import
+////////////////////*/
+
+
+/*  Inter
+////////////////////*/
+
+/* inter-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/public/fonts/inter/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/public/fonts/inter/inter-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/public/fonts/inter/inter-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/public/fonts/inter/inter-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/public/fonts/inter/inter-v20-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/public/fonts/inter/inter-v20-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+
+/*  Archivo
+////////////////////*/
+
+/* archivo-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/public/fonts/archivo/archivo-v25-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/archivo/archivo-v25-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* archivo-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/public/fonts/archivo/archivo-v25-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/archivo/archivo-v25-latin-900.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+
+/*  DM Sans
+////////////////////*/
+
+/* dm-sans-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/public/fonts/dm-sans/dm-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/dm-sans/dm-sans-v17-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* dm-sans-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/public/fonts/dm-sans/dm-sans-v17-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/dm-sans/dm-sans-v17-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* dm-sans-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/public/fonts/dm-sans/dm-sans-v17-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/dm-sans/dm-sans-v17-latin-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* dm-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/public/fonts/dm-sans/dm-sans-v17-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('/public/fonts/dm-sans/dm-sans-v17-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+
+/* body{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -.5px;
+} */
+
+body{
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+h1{
+    font-weight: 900;
+}
+h2,
+h3,
+h4,
+h5{
+    font-weight: 700;
+}
+
+
+.footer__social-links{
+    ul{
+        &:hover li{
+            opacity: .5;
+        }
+        li:hover{
+            opacity: 1;
+        }
+    }
+}

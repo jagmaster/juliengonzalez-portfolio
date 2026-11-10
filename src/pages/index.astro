@@ -1,16 +1,248 @@
 ---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/layout.astro";
+import Services from "../components/Sevices.astro";
+import FeaturedProjectCard from "../components/projects/FeaturedProjectCard.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Julien Gonzalez"
+  description="Découvrez le portfolio de Julien Gonzalez, Web Designer et développeur web."
+>
+
+
+<!-- md:text-[4rem] -->
+			<section class="md:pt-20 bg-stone-50 hero text-neutral-50 md:h-dvh flex flex-col justify-start md:justify-center items-center">
+				<div class="container box-border mx-auto px-4 md:px-20 text-center h-full flex flex-col justify-center items-center">
+					<div class="hero__content text-stone-950 flex flex-col justify-center items-start md:items-center gap-4 md:gap-6">
+						<div data-aos="zoom-in" data-aos-easing="ease-in-out" class="img-container rounded-full overflow-hidden max-h-28 md:max-h-32 max-w-28 md:max-w-32">
+							<img src="img/pp.jpg" alt="Photo de profil de Julien Gonzalez" width="128px" height="128px">
+						</div>
+						<h1
+							data-aos="fade-up"
+							data-aos-easing="ease-in-out"
+							id="jobName"
+							
+							class="max-w-4xl text-5xl md:text-6xl  leading-10 md:leading-16 font-black headline text-left md:text-center">
+							<!-- D.A. - Web Designer & Développeur Web Front-end -->
+							D.A. - Web Designer & Développeur Front-End
+						</h1>
+						<p 
+							data-aos="fade-up"
+							data-aos-easing="ease-in-out"
+							data-aos-delay="300"
+							class="text-stone-700 text-lg max-w-md hero__description text-left md:text-center">
+							Je conçois et développe des sites web sur mesure, élégants et centrés sur l’expérience utilisateur.
+						</p>
+						<div class="cta w-full md:pb-0 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6">
+							<a
+								data-aos="flip-down"
+								data-aos-delay="700"
+								href="/projects" class="btn--large w-full md:w-fit">
+								Voir les projets
+							</a>
+							<a 
+								data-aos="flip-down"
+								data-aos-delay="700"
+								href="#contact" class="btn--large w-full md:w-fit">
+							Me contacter</a>
+						</div>
+					</div>
+				</div>
+				<div class="clients py-10">
+					<ul class="logos hidden md:flex flex-row justify-center items-center gap-4">
+						<li 
+							data-aos="fade-right"
+							data-aos-delay="800"
+							data-aos-easing="ease-in-out"
+							data-aos-anchor="#jobName"
+							class="logo flex justify-center items-center px-10">
+							<img src="/img/logos/grain.svg" alt="logo de Grain&Co.">
+						</li>
+						<li
+							data-aos="fade-right"
+							data-aos-delay="1000"
+							data-aos-easing="ease-in-out" 
+							data-aos-anchor="#jobName"
+							class="logo flex justify-center items-center px-10">
+							<img src="/img/logos/flowriders.svg" alt="logo de Grain&Co.">
+						</li>
+						<li
+							data-aos="fade-right"
+							data-aos-delay="1300" 
+							data-aos-easing="ease-in-out"
+							data-aos-anchor="#jobName"
+							class="logo flex justify-center items-center px-10">
+							<img src="/img/logos/trame.svg" alt="logo de Grain&Co.">
+						</li>
+						<li
+							data-aos="fade-right"
+							data-aos-delay="1600" 
+							data-aos-easing="ease-in-out"
+							data-aos-anchor="#jobName"
+							class="logo flex justify-center items-center px-10">
+							<img src="/img/logos/gouv.svg" alt="logo de Grain&Co.">
+						</li>
+						<li
+							data-aos="fade-right"
+							data-aos-delay="1800" 
+							data-aos-easing="ease-in-out"
+							data-aos-anchor="#jobName"
+							class="logo flex justify-center items-center px-10">
+							<img src="/img/logos/urbanbliss.svg" alt="logo de Grain&Co.">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- <section class="clients py-10">
+				<ul class="logos flex flex-row justify-center items-center gap-4">
+					<li class="logo flex justify-center items-center px-10">
+						<img src="/src/assets/img/logos/grain.svg" alt="logo de Grain&Co.">
+					</li>
+					<li class="logo flex justify-center items-center px-10">
+						<img src="/src/assets/img/logos/grain.svg" alt="logo de Grain&Co.">
+					</li>
+					<li class="logo flex justify-center items-center px-10">
+						<img src="/src/assets/img/logos/grain.svg" alt="logo de Grain&Co.">
+					</li>
+					<li class="logo flex justify-center items-center px-10">
+						<img src="/src/assets/img/logos/grain.svg" alt="logo de Grain&Co.">
+					</li>
+					<li class="logo flex justify-center items-center px-10">
+						<img src="/src/assets/img/logos/grain.svg" alt="logo de Grain&Co.">
+					</li>
+				</ul>
+			</section> -->
+			
+			<Services />
+
+			<!-- Home Portfolio -->
+			<section class="home__portfolio py-20 lg:py-32 bg-stone-50">
+				<div class="container mx-auto px-4 xl:px-20">
+					<div class="home__portfolio__content flex flex-col justify-start items-start gap-20">
+
+						<div
+							data-aos="fade-up" 
+							data-aos-offset="300" 
+							data-aos-easing="ease-in-out"
+							class="home__portfolio__header flex flex-col justify-start items-start gap-4">
+							<div class="header__title flex flex-col justify-start items-start gap-2">
+								<h3 class="tagline">Portfolio</h3>
+								<h2 class="section-title">Projets Sélectionnés</h2>
+							</div>
+							<div class="header__description max-w-lg mb-4">
+								<p>
+									Une sélection de projets explorant le design, l’expérience utilisateur et le développement web.
+								</p>
+							</div>
+							
+							<div class="header__cta">
+								<a href="/works.html" class="btn--large">Voir tous les projets</a>
+							</div>
+						</div>
+
+						<div class="home__portfolio__featured-works flex flex-col justify-center items-center gap-20">
+							
+							{projects.map((project) => (
+								<FeaturedProjectCard
+								  {...project.data}
+								  href={`/projects/${project.id}/`}
+								/>
+							))}
+
+							<!-- <FeaturedProjectCard
+								title="Grain&Co1"
+								description="Ergonomie et cohérence visuelle. Conception graphique des interfaces utilisateurs de sites vitrines, E-commerce et application mobile."
+								cover="/img/cover--grain.jpg"
+								coverAlt="Couverture du projet Grain&Co"
+								href="/projects/grain-and-co/"
+								categories={["Branding", "UI/UX", "Web Design"]}
+							/> -->
+							<!-- <div class="home__work flex flex-col lg:flex-row justify-start gap4 md:gap-6 pt-6 ">
+								<div 
+									data-aos="fade-right"
+									data-aos-offset="300"
+									data-aos-easing="ease-in-out" 
+									data-aos-delay="200"
+									class="home__work__cover max-w-fit rounded-3xl overflow-hidden ">
+									<a href="/">
+										<img src="/public/img/cover--grain.jpg" alt="Cover du projet Grain&Co." width="690" height="388">
+									</a>
+								</div>
+							
+								<div
+									data-aos="fade-right"
+									data-aos-offset="300"
+									data-aos-easing="ease-in-out" 
+									data-aos-delay="400"
+									class="project_infos md:border-t-4 border-stone-950 pt-6 px-4">
+									<h3 class="project_title mb-2 text-4xl font-extrabold">
+										Grain&Co
+									</h3>
+									<p class="project_description mb-6 text-stone-700 max-w-md">
+										Ergonomie et cohérence visuelle. Conception graphique des interfaces utilisateurs de sites vitrines,E-commerce et application mobile.
+									</p>
+									<ul class="mb-10 flex flex-row justify-start items-start gap-2 text-sm uppercase">
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">Branding</a>
+										</li>
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">UI/UX</a>
+										</li>
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">Web Design</a>
+										</li>
+									</ul>
+									<a href="/" class="btn--large">Voir le projet</a>
+								</div>
+							</div>
+							<div class="home__work flex flex-col lg:flex-row justify-start gap-4 md;gap-6 pt-6 ">
+								<div 
+									data-aos="fade-right"
+									data-aos-offset="300"
+									data-aos-easing="ease-in-out"
+									class="home__work__cover max-w-fit rounded-3xl overflow-hidden ">
+									<a href="/">
+										<img src="/public/img/cover--urbanbliss.jpg" alt="Cover du projet Grain&Co." width="690" height="388">
+									</a>
+								</div>
+							
+								<div 
+									data-aos="fade-right"
+									data-aos-offset="300"
+									data-aos-easing="ease-in-out" 
+									data-aos-delay="200"
+									class="project_infos md:border-t-4 border-stone-950 px-4 pt-6">
+									<h3 class="project_title mb-2 text-4xl font-extrabold">
+										Urbanbliss
+									</h3>
+									<p class="project_description mb-6 text-stone-700 max-w-md">
+										Ergonomie et cohérence visuelle. Conception graphique des interfaces utilisateurs de sites vitrines,E-commerce et application mobile.
+									</p>
+									<ul class="mb-10 flex flex-wrap justify-start items-start gap-2 text-sm uppercase">
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">Branding</a>
+										</li>
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">UI/UX</a>
+										</li>
+										<li class="category-tag">
+											<a href="/" class="px-4 py-2">Web Design</a>
+										</li>
+									</ul>
+									<a href="/" class="btn--large">Voir le projet</a>
+								</div>
+							</div> -->
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			
+
+</Layout>
