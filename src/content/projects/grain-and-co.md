@@ -9,12 +9,12 @@ cover: "/img/projects/grain_and_co/cover--grain.jpg"
 coverAlt: "Couverture du projet Grain&Co"
 
 categories:
-  - Direction artistique
+  - D.A.
   - UI/UX
   - Web Design
 
-featured: true
-order: 2
+featured: false
+order: 3
 
 detailCover: "/img/projects/grain_and_co/cover_grain--large.jpg"
 detailCoverAlt: "Présentation du projet Grain&Co"

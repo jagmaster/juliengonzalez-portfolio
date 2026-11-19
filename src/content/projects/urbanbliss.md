@@ -9,12 +9,12 @@ cover: "/img/projects/urbanbliss/cover--urbanbliss.jpg"
 coverAlt: "Couverture du projet Urbanbliss"
 
 categories:
-  - Direction artistique
+  - D.A.
   - UI/UX
   - Web Design
 
 featured: true
-order: 1
+order: 2
 
 detailCover: "/img/projects/urbanbliss/cover--large__urbanbliss.jpg"
 detailCoverAlt: "Présentation du projet Urbanbliss"
